@@ -1,0 +1,19 @@
+{
+  "dependencies": {
+    "koa-symphony": "^1.0.1"
+  },
+  "scripts": {
+    "build": "NODE_ENV=production settingPath='/webpack/setting.js' webpack --config './webpack/webpack.config.js'",
+    "dev": "npm run server-dev & npm run webpack-dev",
+    "server-dev": "NODE_ENV=development nodemon app.js",
+    "webpack-dev": "NODE_ENV=development settingPath='/webpack/setting.js' webpack-dev-server --config './webpack/webpack.config.js'",
+    "fix": "./node_modules/.bin/eslint --fix"
+  },
+  "name": "koa-symphony",
+  "version": "1.0.0",
+  "description": "koa2 webpack4 koa-router sequelize twig eslint",
+  "main": "app.js",
+  "repository": "https://github.com/Jay-tian/koaeasy.git",
+  "author": "jay",
+  "license": "MIT"
+}

@@ -62,7 +62,7 @@ export default function DbArticleHolder() {
     const fetchArticles = async () => {
         // Sending GET request to 'articles/all' endpoint
         axios
-            .get('http://localhost:4001/articles/limit')
+            .get('https://darkwire-express-server.herokuapp.com/articles/limit')
             .then(response => {
                 // Updating articles state
                 setArticles(response.data)

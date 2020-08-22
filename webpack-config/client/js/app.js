@@ -1,0 +1,1 @@
+const version = require('../../../config/version.js');

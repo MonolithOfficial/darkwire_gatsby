@@ -58,7 +58,7 @@ console.log(pageQuery)
     const fetchArticles = async () => {
         // Sending GET request to 'articles/all' endpoint
         axios
-            .get('http://localhost:4001/articles/all')
+            .get('https://darkwire-express-server.herokuapp.com/articles/all')
             .then(response => {
                 // Updating articles state
                 setArticles(response.data)

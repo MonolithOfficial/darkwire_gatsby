@@ -43,12 +43,6 @@ export class Home extends Component {
             <div>
                 <div id="topContainer">
                     <DbArticleHolderSlideshow />
-                    {/* <div className="slideshow-container">
-                        <Slideshow />
-                    </div> */}
-                    {/* <div id="featuredArticles">
-                        <FeaturedArticles articles={this.state.articles} />
-                    </div> */}
                 </div>
                 <div id="pageWrapperHome">
                     {/* {articleList} */}

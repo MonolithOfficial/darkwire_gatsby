@@ -26,15 +26,20 @@
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-helmet": "^6.1.0",
+    "react-id-swiper": "^4.0.0",
     "react-router-dom": "^5.2.0",
-    "serve": "^11.3.2"
+    "serve": "^11.3.2",
+    "swiper": "^6.1.2"
   },
   "devDependencies": {
-    "prettier": "2.0.5",
+    "axios": "0.19.2",
     "concurrently": "5.1.0",
     "nodemon": "2.0.3",
+    "prettier": "2.0.5",
+    "sass": "^1.26.10",
+    "sass-loader": "^9.0.3",
     "sqlite3": "4.1.1",
-    "axios": "0.19.2"
+    "webpack": "^4.44.1"
   },
   "keywords": [
     "gatsby"

@@ -5,24 +5,49 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from "react"
+import React, { useEffect, useState } from 'react'
+import axios from 'axios'
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import Navbar from './Navbar'
 import Image from './image'
 import Header from "./header"
 import "./layout.css"
+import Footer from "./Footer"
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
+  // const data = useStaticQuery(graphql`
+  //   query SiteTitleQuery {
+  //     site {
+  //       siteMetadata {
+  //         title
+  //       }
+  //     }
+  //   }
+  // `)
+
+  const [articles, setArticles] = useState([])
+  const [Loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    fetchArticles()
+  }, [])
+
+  const fetchArticles = async () => {
+    // Sending GET request to 'articles/all' endpoint
+    axios
+        .get('https://darkwire-express-server.herokuapp.com/articles/limit')
+        .then(response => {
+            // Updating articles state
+            setArticles(response.data)
+            console.log(response.data)
+
+            // Updating loading state
+            setLoading(false)
+        })
+        
+        .catch(error => console.error(`There was an error retrieving the article list: ${error}`))
+}
 
   return (
     <>
@@ -34,9 +59,7 @@ const Layout = ({ children }) => {
       {/* <Header siteTitle={data.site.siteMetadata.title} /> */}
       <div>
         <main>{children}</main>
-        <footer>
-          
-        </footer>
+        <Footer articleProps={articles}/>
       </div>
     </>
   )
