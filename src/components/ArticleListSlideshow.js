@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from "gatsby"
-import 'swiper/swiper.css'
-import 'swiper/components/navigation/navigation.css';
+import '../swiper/swiper.css'
+import '../swiper/components/navigation/navigation.css';
 import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Component } from 'react'
