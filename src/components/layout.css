@@ -88,6 +88,56 @@ main {
   max-width: 100%;
 }
 
+#searchBar {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#searchBar input {
+  background-color: #252120;
+  color: white;
+  border: none;
+  font-size: 18px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  width: 30%;
+  caret-color: #787878;
+  border-bottom: 3px solid #787878;
+}
+
+#searchBar input::-webkit-input-placeholder {
+  color: #787878;
+}
+
+#searchBar input:-ms-input-placeholder {
+  color: #787878;
+}
+
+#searchBar input::-ms-input-placeholder {
+  color: #787878;
+}
+
+#searchBar input::placeholder {
+  color: #787878;
+}
+
+#searchBar input::-moz-selection {
+  color: black;
+  background-color: white;
+}
+
+#searchBar input::selection {
+  color: black;
+  background-color: white;
+}
+
 #navbar {
   font-size: 1.3rem;
   padding-top: 1.1rem;
@@ -583,6 +633,9 @@ main {
     margin: 0;
     width: 100%;
     border: none;
+  }
+  #searchBar input {
+    width: 100%;
   }
   .slideshow-container {
     width: 100%;
