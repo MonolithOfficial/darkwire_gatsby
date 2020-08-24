@@ -68,7 +68,7 @@ export class ArticleListSlideshow extends Component {
                             alignItems: "center"
                         }}
                         >
-                            <Loader type="ThreeDots" color="#787878" height="100" width="100" />
+                            <Loader type="Watch" color="#787878" height="100" width="100" />
                         </div>
                 )
             // for (let i = 0; i < pageQuery.length; i++) {

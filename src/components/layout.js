@@ -25,6 +25,18 @@ const Layout = ({ children }) => {
   //     }
   //   }
   // `)
+  const imageData = useStaticQuery(graphql`
+    query {
+      placeholderImage: file(relativePath: { eq: "dw_logo__greywhite_big.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 704, quality: 100) {
+            ...GatsbyImageSharpFluid
+            ...GatsbyImageSharpFluidLimitPresentationSize
+          }
+        }
+      }
+    }
+  `)
 
   const [articles, setArticles] = useState([])
   const [Loading, setLoading] = useState(true)
@@ -59,7 +71,7 @@ const Layout = ({ children }) => {
       {/* <Header siteTitle={data.site.siteMetadata.title} /> */}
       <div>
         <main>{children}</main>
-        <Footer articleProps={articles}/>
+        <Footer articleProps={articles} imageData={imageData}/>
       </div>
     </>
   )
