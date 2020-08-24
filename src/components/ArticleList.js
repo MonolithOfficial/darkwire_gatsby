@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link, useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
+import Loader from 'react-loader-spinner';
 
 export default function ArticleList(props) {
     const { state } = props
@@ -34,7 +35,17 @@ export default function ArticleList(props) {
             )
         })
     ) : (
-        <h4>Loading, please stand by.</h4>
+            <div
+            style={{
+                width: "100%",
+                height: "100",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center"
+            }}
+            >
+                <Loader type="ThreeDots" color="#787878" height="100" width="100" />
+            </div>
     )
     return (
         <div className="wrapper">

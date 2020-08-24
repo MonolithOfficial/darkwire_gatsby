@@ -6,6 +6,7 @@ import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Component } from 'react'
 import Img from "gatsby-image"
+import Loader from 'react-loader-spinner';
 import { useStaticQuery, graphql } from "gatsby"
 
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
@@ -58,7 +59,17 @@ export class ArticleListSlideshow extends Component {
                     )
                 })
             ) : (
-                        <h4>Loading, please stand by.</h4>
+                        <div
+                        style={{
+                            width: "100%",
+                            height: "100",
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center"
+                        }}
+                        >
+                            <Loader type="ThreeDots" color="#787878" height="100" width="100" />
+                        </div>
                 )
             // for (let i = 0; i < pageQuery.length; i++) {
             //     console.log(pageQuery[i])
