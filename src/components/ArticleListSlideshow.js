@@ -39,21 +39,21 @@ export class ArticleListSlideshow extends Component {
             const { state } = this.props
             const { pageQuery } = this.props
             console.log(pageQuery.images)
-            const articleList = state.length ? (
-                state.map(article => {
+            const articleList = pageQuery.allMarkdownRemark.edges.length ? (
+                pageQuery.allMarkdownRemark.edges.map(article => {
                     return (
-                        <SwiperSlide key={article.id}>
-                            <div className="numbertext">{article.id} / {state.length}</div>
+                        <SwiperSlide key={article.node.id}>
+                            <div className="numbertext">{article.node.frontmatter.number} / {pageQuery.allMarkdownRemark.edges.length}</div>
                             {/* <img src={article.image} alt="" style={{ width: "100%" }} /> */}
-                            <Link to={"/" + article.content.split('.')[0]} key={article.id}>
+                            <Link to={"/" + article.node.frontmatter.content} key={article.node.id}>
                                 <Img fluid={pageQuery.images.edges.find(n => {
-                                    return n.node.relativePath.includes(article.image)
+                                    return n.node.relativePath.includes(article.node.frontmatter.image)
                                 }).node.childImageSharp.fluid} />
                             </Link>
                             
                             
                             
-                            <div className="text">{article.title}</div>
+                            <div className="text">{article.node.frontmatter.title}</div>
 
                         </SwiperSlide>
                     )
@@ -71,6 +71,39 @@ export class ArticleListSlideshow extends Component {
                             <Loader type="Watch" color="#787878" height="100" width="100" />
                         </div>
                 )
+
+            // const articleList = state.length ? (
+            //     state.map(article => {
+            //         return (
+            //             <SwiperSlide key={article.id}>
+            //                 <div className="numbertext">{article.id} / {state.length}</div>
+            //                 {/* <img src={article.image} alt="" style={{ width: "100%" }} /> */}
+            //                 <Link to={"/" + article.content.split('.')[0]} key={article.id}>
+            //                     <Img fluid={pageQuery.images.edges.find(n => {
+            //                         return n.node.relativePath.includes(article.image)
+            //                     }).node.childImageSharp.fluid} />
+            //                 </Link>
+                            
+                            
+                            
+            //                 <div className="text">{article.title}</div>
+
+            //             </SwiperSlide>
+            //         )
+            //     })
+            // ) : (
+            //             <div
+            //             style={{
+            //                 width: "100%",
+            //                 height: "100",
+            //                 display: "flex",
+            //                 justifyContent: "center",
+            //                 alignItems: "center"
+            //             }}
+            //             >
+            //                 <Loader type="Watch" color="#787878" height="100" width="100" />
+            //             </div>
+            //     )
             // for (let i = 0; i < pageQuery.length; i++) {
             //     console.log(pageQuery[i])
             // }

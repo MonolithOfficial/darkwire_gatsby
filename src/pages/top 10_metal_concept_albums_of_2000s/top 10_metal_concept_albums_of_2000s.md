@@ -1,17 +1,19 @@
 ---
-path: "/top_ten_dm_90s"
+path: "/top 10_metal_concept_albums_of_2000s"
 date: "2020-07-18"
 image: "90s_concepts.png"
-title: "Top 10 Old-School Death Metal Bands From the 90s"
+title: "Top 10 Metal Concept Albums of 2000s"
 author: "Monolith"
 content: "top_ten_dm_90s"
-desc: "Primal Death Metal from the 90s, at its peak popuarity, was gaining u
-nforseen momentum as bands from around the world carried its flag. Here's the To
-p 10 of those legendary bands."
+desc: "Concept albums have, are and always will be an efficient way of looki
+ng at music from a different perspective. Maybe you can say more than you could'
+ve without the concept? Maybe you can tell a story in a more cinematic way? Yes,
+it's quite a feat to design a solid structure, so, here is the Top 10 of concep
+t albums from the 2000s that exceeded every expectation."
 views: 0
 commentsNumber: 0
 category: "Metal"
-number: 1
+number: 2
 ---
 
 

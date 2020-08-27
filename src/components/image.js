@@ -13,24 +13,32 @@ import Img from "gatsby-image"
  * - `useStaticQuery`: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-const Image = () => {
+const Image = (props) => {
   const data = useStaticQuery(graphql`
     query {
-      placeholderImage: file(relativePath: { eq: "darkwirecover.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 704, quality: 100) {
-            ...GatsbyImageSharpFluid
-            ...GatsbyImageSharpFluidLimitPresentationSize
-          }
+      allFile(filter: { sourceInstanceName: { eq: "images" } }) {
+        edges {
+            node {
+                relativePath
+                name
+                childImageSharp {
+                    fluid {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
         }
       }
     }
   `)
+  // console.log(data.allFile.edges.find(n => {
+  //   return n.node.relativePath.includes("darkwirecover.png")
+  // }).node.childImageSharp.fluid)
 
   return (
-    <div id="backgroundHolder">
-      <Img fluid={data.placeholderImage.childImageSharp.fluid} />
-    </div>
+    <Img fluid={data.allFile.edges.find(n => {
+      return n.node.relativePath.includes(props.imageProp)
+    }).node.childImageSharp.fluid} />
   )
 }
 

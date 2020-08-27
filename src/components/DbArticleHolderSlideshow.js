@@ -26,7 +26,14 @@ export default function DbArticleHolderSlideshow() {
                         path
                         date
                         title
+                        desc
+                        image
+                        views
+                        commentsNumber
                         author
+                        content
+                        category
+                        number
                     }
                 }
             }

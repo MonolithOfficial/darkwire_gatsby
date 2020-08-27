@@ -5,7 +5,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 import axios from 'axios'
 
 
-export default function DbArticleHolder() {
+export default function DbArticleHolder(props) {
     const [type, setType] = useState('')
     const [title, setTitle] = useState('')
     const [desc, setDesc] = useState('')
@@ -32,7 +32,13 @@ export default function DbArticleHolder() {
                             path
                             date
                             title
+                            desc
+                            image
+                            views
+                            commentsNumber
                             author
+                            content
+                            category
                         }
                     }
                 }
@@ -53,7 +59,9 @@ export default function DbArticleHolder() {
         }
     `)
 
-    console.log(pageQuery)
+    // Loopable array
+    // console.log(pageQuery.allMarkdownRemark.edges)
+    console.log(props.searchType)
 
 
 
@@ -62,7 +70,7 @@ export default function DbArticleHolder() {
     const fetchArticles = async () => {
         // Sending GET request to 'articles/all' endpoint
         axios
-            .get('https://darkwire-express-server.herokuapp.com/articles/limit')
+            .get('https://darkwire-express-server.herokuapp.com/articles/' + props.searchType)
             .then(response => {
                 // Updating articles state
                 setArticles(response.data)

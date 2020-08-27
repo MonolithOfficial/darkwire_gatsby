@@ -14,6 +14,9 @@ router.get('/all', articlesRoutes.articlesAll)
 // GET request, retrieve limited articles
 router.get('/limit', articlesRoutes.articlesLimit)
 
+// GET request, retrieve exact articles
+router.get('/exact', articlesRoutes.articlesExact)
+
 // POST request, add an article
 router.post('/create', articlesRoutes.articlesCreate)
 

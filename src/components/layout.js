@@ -64,7 +64,9 @@ const Layout = ({ children }) => {
   return (
     <>
     <div id="upperBound">
-      <Image />
+      <div id="backgroundHolder">
+        <Image imageProp="darkwirecover.png"/>
+      </div>
     </div>
       
       <Navbar />

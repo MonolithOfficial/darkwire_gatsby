@@ -6,9 +6,9 @@ import DbArticleHolder from './DbArticleHolder';
 import DbArticleHolderSlideshow from './DbArticleHolderSlideshow'
 
 export class Home extends Component {
-    // state = {
-    //     articles: []
-    // }
+    state = {
+        searchTypes: ['all', 'limit', 'exact']
+    }
 
     // componentDidMount(){
     //     axios.get("https://raw.githubusercontent.com/MonolithOfficial/darkwirejsons/master/articles.json")
@@ -21,6 +21,7 @@ export class Home extends Component {
         
     // }
     render() {
+        // console.log(this.state.searchTypes[1])
         // let { articles } = this.state;
         // let articleList = articles.length ? (
         //     articles.map(article => {
@@ -46,7 +47,7 @@ export class Home extends Component {
                 </div>
                 <div id="pageWrapperHome">
                     {/* {articleList} */}
-                    <DbArticleHolder />
+                    <DbArticleHolder searchType="limit"/>
                         
                     <Charts />
                     

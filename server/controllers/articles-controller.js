@@ -18,6 +18,7 @@ exports.articlesAll = async (req, res) => {
     })
 }
 
+// Limited Select
 exports.articlesLimit = async (req, res) => {
     // Selecting articles via Knex
     knex.select('*')
@@ -33,7 +34,22 @@ exports.articlesLimit = async (req, res) => {
     })
 }
 
-// Controller #2
+// Exact Select (Metal Category)
+exports.articlesExact = async (req, res) => {
+    // Selecting articles via Knex
+    knex('articles')
+    .where('category', 'Metal')
+    .then(userData => {
+        // Telling the server to give back articles as a response on this request
+        res.json(userData)
+    })
+    .catch(error => {
+        // Send error message as a response
+        res.json({message: `An error occurred while retrieving the articles: ${error}`})
+    })
+}
+
+
 // Adds a record
 exports.articlesCreate = async (req, res) => {
     // Inserting a new record
@@ -60,7 +76,6 @@ exports.articlesCreate = async (req, res) => {
         })
 }
 
-// Controller #3
 // Removes a specific record
 exports.articlesDelete = async (req, res) => {
     // Find the article via ID
@@ -76,7 +91,6 @@ exports.articlesDelete = async (req, res) => {
     })
 }
 
-// Controller #4
 // Deletes all records
 exports.articlesReset = async (req, res) => {
     knex
