@@ -5,9 +5,9 @@ image: "90s_concepts.png"
 title: "Top 10 Old-School Death Metal Bands From the 90s"
 author: "Monolith"
 content: "top_ten_dm_90s"
-desc: "Primal Death Metal from the 90s, at its peak popuarity, was gaining u
-nforseen momentum as bands from around the world carried its flag. Here's the To
-p 10 of those legendary bands."
+desc: "Primal Death Metal from the 90s, at its peak popuarity, was gaining unforseen
+momentum as bands from around the world carried its flag. Here's the Top 10
+of those legendary bands."
 views: 0
 commentsNumber: 0
 category: "Metal"
