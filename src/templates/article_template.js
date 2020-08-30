@@ -1,12 +1,15 @@
 import React from 'react'
 import { Link } from "gatsby"
 import { graphql } from 'gatsby'
+import SEO from "../components/seo"
 import Layout from "../components/layout"
 export default function Template({data}){
     const article  = data.markdownRemark
 
     return (
         <Layout>
+            <SEO title={article.frontmatter.title} />
+
             <div className="wrapperArticle">
                 {/* <Link to="/">Go Back</Link> */}
                 <hr/>

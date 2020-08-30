@@ -22,6 +22,7 @@ number: 2
 Let's start this list out with some swedish death metal. Dismember was formed in 1988 and since has been considered as one of Sweden's \"Big Four\" alongside Grave, Entombed and Unleashed. In 1991 Dismember unveiled their majestic debut album titled Like An Ever Flowing Stream which is regarded as a milestone in Swedish metal history. Dismember, like some other Swedish death metal giants, is famous for its inhumanely buzz-sounding guitar tone, which, in contrast to American death metal puts more emphasis on sheer heaviness rather than the rhythm. 
 
 
+
 ![Dismember](https://raw.githubusercontent.com/MonolithOfficial/darkwirejsons/master/images/dismember.jpg)
 
 

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import SEO from "./seo"
 import Charts from './Charts'
 import { graphql, useStaticQuery } from 'gatsby'
 import DbArticleHolder from './DbArticleHolder';
@@ -85,7 +86,8 @@ export default function Home() {
         // )
     return (
         <div>
-            <SearchList pageQuery={pageQuery    }/>
+            <SEO title="Home" />
+            <SearchList pageQuery={pageQuery}/>
             <div id="topContainer">
                 <ArticleListSlideshow pageQuery={pageQuery}/>
             </div>
