@@ -70,9 +70,6 @@ const Layout = ({ children }) => {
     </div>
       
       <Navbar />
-      <div id="searchBar">
-        <input type="text" placeholder="Search"/>
-      </div>
       {/* <Header siteTitle={data.site.siteMetadata.title} /> */}
       <div>
         <main>{children}</main>

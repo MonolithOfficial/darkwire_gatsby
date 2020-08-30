@@ -18,9 +18,9 @@ export default function DbArticleHolder(props) {
     const [Loading, setLoading] = useState(true)
 
     // Fetching articles initially
-    useEffect(() => {
-        fetchArticles()
-    }, [])
+    // useEffect(() => {
+    //     fetchArticles()
+    // }, [])
 
     const pageQuery = useStaticQuery(graphql`
         query {
@@ -61,30 +61,30 @@ export default function DbArticleHolder(props) {
 
     // Loopable array
     // console.log(pageQuery.allMarkdownRemark.edges)
-    console.log(props.searchType)
+    // console.log(props.searchType)
 
 
 
 
     // Function to fetch all articles
-    const fetchArticles = async () => {
-        // Sending GET request to 'articles/all' endpoint
-        axios
-            .get('https://darkwire-express-server.herokuapp.com/articles/' + props.searchType)
-            .then(response => {
-                // Updating articles state
-                setArticles(response.data)
-                console.log(response.data)
+    // const fetchArticles = async () => {
+    //     // Sending GET request to 'articles/all' endpoint
+    //     axios
+    //         .get('https://darkwire-express-server.herokuapp.com/articles/' + props.searchType)
+    //         .then(response => {
+    //             // Updating articles state
+    //             setArticles(response.data)
+    //             console.log(response.data)
 
-                // Updating loading state
-                setLoading(false)
-            })
+    //             // Updating loading state
+    //             setLoading(false)
+    //         })
             
-            .catch(error => console.error(`There was an error retrieving the article list: ${error}`))
-    }
+    //         .catch(error => console.error(`There was an error retrieving the article list: ${error}`))
+    // }
     return (
         <div>
-            <ArticleList state={articles} pageQuery={pageQuery}/> 
+            <ArticleList pageQuery={pageQuery}/> 
             {/* <ArticleListSlideshow state={articles} pageQuery={pageQuery}/> */}
         </div>
     )

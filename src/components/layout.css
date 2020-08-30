@@ -138,6 +138,33 @@ main {
   background-color: white;
 }
 
+#searchList {
+  z-index: 2;
+  max-height: 25rem;
+  padding-left: 1.2rem;
+  padding-right: 1.2rem;
+  padding-top: 0.5rem;
+  position: absolute;
+  display: none;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  width: 40%;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+#searchList::-webkit-scrollbar {
+  display: none;
+}
+
+#searchList h2 {
+  margin: 0;
+}
+
 #navbar {
   font-size: 1.3rem;
   padding-top: 1.1rem;
@@ -399,6 +426,25 @@ main {
   transition: 0.2s;
 }
 
+.articleDivSearch {
+  display: -ms-grid;
+  display: grid;
+  width: 95%;
+  -ms-grid-columns: 1fr 2fr;
+      grid-template-columns: 1fr 2fr;
+  grid-auto-rows: minmax(-webkit-min-content, -webkit-max-content);
+  grid-auto-rows: minmax(min-content, max-content);
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin-bottom: 0.5rem;
+  background: #252120;
+  padding: 0.5rem;
+  border: 3px solid #787878;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
 #charts {
   background: rgba(0, 0, 0, 0.7);
   width: 100%;
@@ -418,7 +464,19 @@ main {
           transform: scale(1.02);
 }
 
+.articleDivSearch:hover {
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+}
+
 .articleDiv img {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  max-width: 100%;
+}
+
+.articleDivSearch img {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
@@ -433,6 +491,13 @@ main {
 .articleDescription {
   font-size: 14px;
   margin: 0.5rem;
+  color: #888;
+}
+
+.articleDescriptionSearch {
+  font-size: 12px;
+  margin: 0.5rem;
+  font-weight: lighter;
   color: #888;
 }
 

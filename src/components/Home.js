@@ -2,13 +2,56 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Charts from './Charts'
+import { graphql, useStaticQuery } from 'gatsby'
 import DbArticleHolder from './DbArticleHolder';
+import SearchList from './SearchList';
+import ArticleList from './ArticleList'
 import DbArticleHolderSlideshow from './DbArticleHolderSlideshow'
+import ArticleListSlideshow from './ArticleListSlideshow'
 
-export class Home extends Component {
-    state = {
-        searchTypes: ['all', 'limit', 'exact']
-    }
+export default function Home() {
+    // state = {
+    //     searchTypes: ['all', 'limit', 'exact']
+    // }
+
+    const pageQuery = useStaticQuery(graphql`
+        query {
+            allMarkdownRemark {
+                edges {
+                node {
+                        id
+                        frontmatter {
+                            path
+                            date
+                            title
+                            desc
+                            image
+                            views
+                            commentsNumber
+                            author
+                            content
+                            category
+                            number
+                        }
+                    }
+                }
+            }
+            images: allFile(filter: { sourceInstanceName: { eq: "images" } }) {
+                edges {
+                    node {
+                        relativePath
+                        name
+                        childImageSharp {
+                            fluid {
+                                ...GatsbyImageSharpFluid
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    `)
+
 
     // componentDidMount(){
     //     axios.get("https://raw.githubusercontent.com/MonolithOfficial/darkwirejsons/master/articles.json")
@@ -20,7 +63,7 @@ export class Home extends Component {
     //     })
         
     // }
-    render() {
+    // render() {
         // console.log(this.state.searchTypes[1])
         // let { articles } = this.state;
         // let articleList = articles.length ? (
@@ -40,22 +83,22 @@ export class Home extends Component {
         // ) : (
         //     <h1>There are no articles at the moment</h1>
         // )
-        return (
-            <div>
-                <div id="topContainer">
-                    <DbArticleHolderSlideshow />
-                </div>
-                <div id="pageWrapperHome">
-                    {/* {articleList} */}
-                    <DbArticleHolder searchType="limit"/>
-                        
-                    <Charts />
-                    
-                </div>
+    return (
+        <div>
+            <SearchList pageQuery={pageQuery    }/>
+            <div id="topContainer">
+                <ArticleListSlideshow pageQuery={pageQuery}/>
             </div>
-            
-        )
-    }
+            <div id="pageWrapperHome">
+                {/* {articleList} */}
+                {/* <DbArticleHolder/> */}
+                <ArticleList pageQuery={pageQuery}/> 
+                    
+                <Charts />
+                
+            </div>
+        </div>
+        
+    )
 }
-
-export default Home;
+// }
