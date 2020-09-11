@@ -42,13 +42,13 @@ export const articleQuery = graphql`
                 date
             }
         }
-        allMarkdownRemark {
+        allMarkdownRemark(sort: {order: DESC, fields: frontmatter___date}) {
             edges {
             node {
                     id
                     frontmatter {
                         path
-                        date
+                        date(formatString: "MMM Do YYYY")
                         title
                         desc
                         image
