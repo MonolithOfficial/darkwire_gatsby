@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Exo+2&family=Exo:wght@200;300&display=swap");
 @-webkit-keyframes fade {
   from {
     opacity: .4;
@@ -64,7 +65,7 @@ a {
 }
 
 body {
-  font-family: 'PT Sans', sans-serif;
+  font-family: 'Exo', sans-serif;
   /* background-image: linear-gradient(to bottom, #000000, #7c0e0e); */
   background-color: #252120;
   top: 0;
@@ -167,6 +168,7 @@ iframe {
 }
 
 #navbar {
+  font-family: 'Exo 2', sans-serif;
   font-size: 1.3rem;
   padding-top: 3rem;
   padding-bottom: 3rem;
