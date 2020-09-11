@@ -23,7 +23,7 @@ export default function Home() {
                         id
                         frontmatter {
                             path
-                            date
+                            date(formatString: "MMM Do YYYY")
                             title
                             desc
                             image
