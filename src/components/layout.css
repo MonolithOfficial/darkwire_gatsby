@@ -757,7 +757,8 @@ iframe {
     border-bottom: none;
   }
   .slideshow-container {
-    width: 100%;
+    width: 98%;
+    margin: auto;
     padding: 0;
   }
   #pageWrapperHome {
