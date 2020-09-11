@@ -65,11 +65,11 @@ const Layout = ({ children }) => {
     <>
     <div id="upperBound">
       <div id="backgroundHolder">
-        <Image imageProp="darkwirecover.png"/>
+        <Image imageProp="dw_logo__greywhite_big.png"/>
       </div>
+      <Navbar />
     </div>
       
-      <Navbar />
       {/* <Header siteTitle={data.site.siteMetadata.title} /> */}
       <div>
         <main>{children}</main>

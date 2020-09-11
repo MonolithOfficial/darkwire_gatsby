@@ -33,11 +33,12 @@
   }
   
   body{
-    font-family: 'Roboto', sans-serif;
+    font-family: 'PT Sans', sans-serif;
     /* background-image: linear-gradient(to bottom, #000000, #7c0e0e); */
-    background: url('https://raw.githubusercontent.com/MonolithOfficial/darkwirejsons/master/images/monolithicbggreyscale.jpg');
-    background-size: 400% 400%;
-    animation: GradientAnimation 50s ease infinite;
+    // background: url('https://raw.githubusercontent.com/MonolithOfficial/darkwirejsons/master/images/monolithicbggreyscale.jpg');
+    // background-size: 400% 400%;
+    // animation: GradientAnimation 50s ease infinite;
+    background-color: #252120;
     top: 0;
     left: 0;
     right: 0;
@@ -47,6 +48,10 @@
 
   main {
     width: 100%;
+  }
+
+  iframe {
+    width: 80%;
   }
 
   .articleThumbHolder {
@@ -116,8 +121,8 @@
   
   #navbar {
     font-size:1.3rem;
-    padding-top: 1.1rem;
-    padding-bottom: 1.1rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
     position: relative;
     display: flex;
     align-items: center;
@@ -125,22 +130,28 @@
     width: 100%;
     height: auto;
     margin: auto;
-    border-bottom: 3px solid #787878;
-    border-top: 3px solid #787878;
+    border-bottom: 2px solid #B22222;
+    border-top: 2px solid #B22222;
   
     /* border-radius: 2rem; */
   }
 
   #upperBound {
     width: 100%;
+    display: grid;
+    column-gap: 0;
+    grid-template-columns: 0.4fr 5fr;
     padding-top: 1.2rem;
     padding-bottom: 1.2rem;
-    background-color: #252120;
+    background-color: #191919;
+    border-bottom: 1px solid #B22222;
   }
   
   #backgroundHolder {
-    width: 60%;
+    width: 13rem;
     margin: auto;
+    margin-right: -15px;
+    z-index: 3;
   }
 
   #backgroundHolder > div {
@@ -177,8 +188,8 @@
   }
   #navbar ul li a {
     text-decoration: none;
-    color: white;
-    font-weight: lighter;
+    color: #B22222;
+    font-weight: 100;
   }
   #navbar ul li a:hover {
     color: grey;
@@ -186,7 +197,7 @@
   
   #topContainer {
     /* background-image: linear-gradient(to top, #000000, #0c0032); */
-    background: #252120;
+    background: none;
     width: 90%;
     margin: auto;
     // display: grid;
@@ -194,16 +205,20 @@
     align-items: center;
     column-gap: 0;
     margin-top: 1.2rem;
-    border: 3px solid #787878;
+    // border: 3px solid #787878;
   }
   
   
   
   .slideshow-container {
     width: 90%;
+    max-width: 90%;
+    // height: 617.35px;
+    max-height: 617.35px;
+    border: 2px solid #B22222;
     position: relative;
     margin: auto;
-    padding: 1.2rem 0 1.2rem 1.2rem;
+    // padding: 1.2rem 0 1.2rem 1.2rem;
     
   }
   
@@ -211,10 +226,10 @@
     position: relative;
     display: none;
   }
-  .mySlides img {
-    filter: brightness(100%);
-    transition: 0.3s;
-  }
+  // .slideshow-container img {
+  //   filter: brightness(100%);
+  //   transition: 0.3s;
+  // }
   
   .mySlides img:hover{
     filter: brightness(60%);
@@ -247,16 +262,19 @@
   }
   
   .text {
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.7);
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
-    margin-bottom: 0.5rem;
+    // margin-bottom: 0.5rem;
     color: #f2f2f2;
     font-size: 15px;
     position: absolute;
+    display: flex;
     bottom: 0;
+    height: 10%;
     width: 100%;
-    text-align: center;
+    justify-content: center;
+    align-items: center;
   }
   
   .numbertext {
@@ -281,28 +299,70 @@
   }
 
   #featuredArticles > div {
-    width: 85%;
+    // position: relative;
+    width: 100%;
     // margin-left: -5%;
     // padding-top: 1.2rem;
     padding-bottom: 1.2rem;
   }
 
-  .featuredArticle {
-    display: grid;
-    width: 90%;
-    grid-template-columns: 1fr; 
-    grid-auto-rows: minmax(min-content, max-content);
-    align-items: center;
-    // background-image: linear-gradient(to top, #000000, #0c0032);
-    background: rgb(37,33,32);
-    margin-bottom: 0.5rem;
-    border: 3px solid #787878;
-    transition: 0.2s;
+  .articleDivFeatured {
+    position: relative;
+    display: inline-block;
   }
-  .featuredArticle img {
-    align-self: center;
+
+  // .articleDescriptionFeatured {
+  //   position: absolute;
+  //   bottom: 8%;
+  //   height: 30%;
+  //   width: 100%;
+  //   background-color: black;
+  //   color: white;
+  // }
+  .articleDivFeatured > div {
+    position: absolute;
+    border-bottom: 1px solid #B22222;
     width: 100%;
+    bottom: 0;
+    height: fit-content;
+    color: white;
+    background-color: rgba(25, 25, 25, 0.7);
   }
+
+  .articleDescriptionFeatured {
+    font-size: 14px;
+    margin: 0.5rem;
+    color: #888;
+  }
+
+  .articleAuthorAndTimeFeatured {
+    font-size: 14px;
+    margin: 0.5rem;
+    color: #888;
+    font-style: italic;
+  }
+
+  .articleTitleFeatured {
+    color: white;
+    margin: 0.5rem;
+  }
+
+  // .featuredArticle {
+  //   display: grid;
+  //   width: 90%;
+  //   grid-template-columns: 1fr; 
+  //   grid-auto-rows: minmax(min-content, max-content);
+  //   align-items: center;
+  //   // background-image: linear-gradient(to top, #000000, #0c0032);
+  //   background: rgb(37,33,32);
+  //   margin-bottom: 0.5rem;
+  //   border: 3px solid #787878;
+  //   transition: 0.2s;
+  // }
+  // .featuredArticle img {
+  //   align-self: center;
+  //   width: 100%;
+  // }
   
   #pageWrapper {
     padding-bottom: 0.5rem;
@@ -340,9 +400,9 @@
     grid-auto-rows: minmax(min-content, max-content);
     align-items: flex-start;
     margin-bottom: 0.5rem;
-    background: rgb(37,33,32);
+    background: #191919;
     padding: 0.5rem;
-    border: 3px solid #787878;
+    border: 2px solid #B22222;
     transition: 0.2s;
   }
 
@@ -364,8 +424,8 @@
     background: rgba(0,0,0,.7);
     width: 100%;
     height: 80%;
-    background: #252120;
-    border: 3px solid #787878;
+    background: #191919;
+    border: 2px solid #B22222;
   }
   
   .formSpan {
@@ -390,7 +450,13 @@
     max-width: 100%;
   }
   .articleCategory {
-    color: white;
+    color: #B22222;
+    margin: 0.5rem;
+  }
+  .articleCategoryFeatured {
+    // z-index: 10;
+    // position: absolute;
+    color: #B22222;
     margin: 0.5rem;
   }
 
@@ -431,6 +497,12 @@
     // font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   }
 
+  #articlePage {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1.5fr 3fr;
+  }
+
   .mainTitleHolder {
     border-bottom-left-radius: 0.5rem;
     border-bottom-right-radius: 0.5rem;
@@ -458,9 +530,12 @@
   }
 
   .wrapperArticle {
-    background-color: #252120;
-    max-width: 80%;
-    margin: auto;
+    background-color: #191919;
+    // border-right: 2px solid #B22222;
+    border-left: 1px solid #B22222;
+    // border-bottom: 2px solid #B22222;
+    max-width: 100%;
+    // float: right;
   }
   
   .wrapperArticle img {
@@ -485,11 +560,9 @@
     width: 100%;
     background-color: white;
     height: 20rem;
-    margin-top: 1.2rem;
-    background-color: #252120;
-    border-top: 5px solid grey;
-    border-top-left-radius: 2rem;
-    border-top-right-radius: 2rem;
+    // margin-top: 1.2rem;
+    background-color: #191919;
+    border-top: 1px solid #B22222;
   }
 
   #footerLogo {
@@ -498,7 +571,7 @@
   }
   
   #footer p, #footer a {
-    color: #9a9a9a;
+    color: #B22222;
     font-size: 13px;
     line-height: 16px;
   }
@@ -506,6 +579,7 @@
   #footer a:hover {
     color: #3c00ff;
   }
+
   
   #footerContent {
     width: 90%;
@@ -515,7 +589,7 @@
     align-content: center;
     justify-items: center;
     grid-template-columns: 1fr 3fr;
-    border-bottom: 1px solid grey;
+    border-bottom: 1px solid #B22222;
   }
   
   #footerCopyright {
@@ -570,8 +644,15 @@
     .slideshow-container {
         margin: auto;
     }
+    // #featured
     #featuredArticles {
       display: none;
+    }
+    #articlePage {
+      grid-template-columns: 1fr;
+    }
+    .wrapperArticle {
+      border: hidden;
     }
     #charts {
       display: none;
@@ -601,8 +682,12 @@
       background-color: #101010;
     }
     #backgroundHolder {
-      width: 100%;
+      display: none;
     }
+    #upperBound {
+      grid-template-columns: 1fr;
+    }
+
     #searchList {
       width: 90%;
     }
@@ -613,6 +698,7 @@
     }
     #searchBar input {
       width: 100%;
+      border-bottom: none;
     }
     .slideshow-container {
         width: 100%;
@@ -625,7 +711,7 @@
     .wrapperArticle {
         margin-top: 0;
         max-width: 100%;
-        border: hidden;
+        
         border-radius: 0;
     }
     .wrapper {
@@ -672,6 +758,9 @@
       max-width: 100%;
     }
 
+    iframe {
+      width: 95%;
+    }
     .wrapperArticle p {
       max-width: 100%;
     }

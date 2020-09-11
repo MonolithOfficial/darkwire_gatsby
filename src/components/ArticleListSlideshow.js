@@ -48,7 +48,7 @@ export class ArticleListSlideshow extends Component {
                             <Link to={"/" + article.node.frontmatter.content} key={article.node.id}>
                                 <Img fluid={pageQuery.images.edges.find(n => {
                                     return n.node.relativePath.includes(article.node.frontmatter.image)
-                                }).node.childImageSharp.fluid} />
+                                }).node.childImageSharp.fluid} imgStyle={{ objectFit: 'cover' }} style={{ maxHeight: "617.35px", width: "100%" }}/>
                             </Link>
                             
                             
