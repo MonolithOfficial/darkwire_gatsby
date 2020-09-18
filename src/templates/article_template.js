@@ -51,7 +51,13 @@ export const articleQuery = graphql`
                         date(formatString: "MMM Do YYYY")
                         title
                         desc
-                        image
+                        image{
+                            childImageSharp {
+                                fluid {
+                                    ...GatsbyImageSharpFluid
+                                }
+                            }
+                        }
                         views
                         commentsNumber
                         author

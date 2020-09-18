@@ -1,7 +1,7 @@
 ---
 path: "/top 10_metal_concept_albums_of_2000s"
 date: "2020-07-19"
-image: "st_life.jpg"
+image: ./thumb.jpg
 title: "Top 10 Metal Concept Albums of 2000s"
 author: "Monolith"
 content: "top 10_metal_concept_albums_of_2000s"

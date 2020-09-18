@@ -1,7 +1,7 @@
 ---
 path: "/top 10_metal_collaboration_albums"
 date: "2020-09-11"
-image: "prb.jpg"
+image: ./thumb.jpg
 title: "Top 10 Metal Collaboration Albums"
 author: "Monolith"
 content: "top 10_metal_collaboration_albums"

@@ -23,20 +23,25 @@ export default function ArticleList(props) {
     const articleList = pageQuery.allMarkdownRemark.edges.length ? (
         pageQuery.allMarkdownRemark.edges.map(article => {
             return (
-                <div className="articleDiv" key={article.node.id}>
-                    {/* <img src={"https://raw.githubusercontent.com/MonolithOfficial/darkwirejsons/master/images/" + article.photo} alt=""/> */}
-                    <div className="articleThumbHolder">
-                        <Img fluid={pageQuery.images.edges.find(n => {
-                            return n.node.relativePath.includes(article.node.frontmatter.image)
-                        }).node.childImageSharp.fluid} />
+                <Link to={"/" + article.node.frontmatter.content}>
+                    <div className="articleDiv" key={article.node.id}>
+                    
+                        {/* <img src={"https://raw.githubusercontent.com/MonolithOfficial/darkwirejsons/master/images/" + article.photo} alt=""/> */}
+                        <div className="articleThumbHolder">
+                            {/* <Img fluid={pageQuery.images.edges.find(n => {
+                                return n.node.relativePath.includes(article.node.frontmatter.image)
+                            }).node.childImageSharp.fluid} /> */}
+                            <Img fluid={article.node.frontmatter.image.childImageSharp.fluid} imgStyle={{ objectFit: 'contain' }} style={{ maxHeight: "100%", width: "100%" }}/>
+                        </div>
+                        <div>
+                            <p className="articleTitle">{article.node.frontmatter.title}</p>
+                            <p className="articleDescription">{article.node.frontmatter.desc}</p>
+                            <p className="articleAuthorAndTime">By {article.node.frontmatter.author} | {article.node.frontmatter.date}</p>
+                            <Link to={"/" + article.node.frontmatter.category.toLowerCase()}><p className="articleCategory">{article.node.frontmatter.category}</p></Link>
+                        </div>
+                        
                     </div>
-                    <div>
-                        <Link to={"/" + article.node.frontmatter.content}><p className="articleTitle">{article.node.frontmatter.title}</p></Link>
-                        <p className="articleDescription">{article.node.frontmatter.desc}</p>
-                        <p className="articleAuthorAndTime">By {article.node.frontmatter.author} | {article.node.frontmatter.date}</p>
-                        <Link to={"/" + article.node.frontmatter.category.toLowerCase()}><p className="articleCategory">{article.node.frontmatter.category}</p></Link>
-                    </div>
-                </div>
+                </Link>
             )
         })
     ) : (

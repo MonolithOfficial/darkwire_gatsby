@@ -46,9 +46,10 @@ export class ArticleListSlideshow extends Component {
                             <div className="numbertext">{article.node.frontmatter.number} / {pageQuery.allMarkdownRemark.edges.length}</div>
                             {/* <img src={article.image} alt="" style={{ width: "100%" }} /> */}
                             <Link to={"/" + article.node.frontmatter.content} key={article.node.id}>
-                                <Img fluid={pageQuery.images.edges.find(n => {
+                                {/* <Img fluid={pageQuery.images.edges.find(n => {
                                     return n.node.relativePath.includes(article.node.frontmatter.image)
-                                }).node.childImageSharp.fluid} imgStyle={{ objectFit: 'cover' }} style={{ maxHeight: "617.35px", width: "100%" }}/>
+                                }).node.childImageSharp.fluid} imgStyle={{ objectFit: 'cover' }} style={{ maxHeight: "617.35px", width: "100%" }}/> */}
+                                <Img fluid={article.node.frontmatter.image.childImageSharp.fluid} imgStyle={{ objectFit: 'cover' }} style={{ maxHeight: "617.35px", width: "100%" }}/>
                             </Link>
                             
                             

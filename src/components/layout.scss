@@ -57,6 +57,8 @@
   }
 
   .articleThumbHolder {
+    z-index: 0;
+    overflow: hidden;
     align-self: center;
     max-width: 100%;
   }
@@ -452,10 +454,10 @@
     transform: scale(1.02);
   }
   
-  .articleDiv img {
-    align-self: center;
-    max-width: 100%;
-  }
+  // .articleThumbHolder img {
+  //   align-self: center;
+  //   width: 200%;
+  // }
   .articleDivSearch img {
     align-self: center;
     max-width: 100%;

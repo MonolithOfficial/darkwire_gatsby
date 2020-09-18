@@ -84,6 +84,8 @@ iframe {
 }
 
 .articleThumbHolder {
+  z-index: 0;
+  overflow: hidden;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
@@ -491,13 +493,6 @@ iframe {
 .articleDivSearch:hover {
   -webkit-transform: scale(1.02);
           transform: scale(1.02);
-}
-
-.articleDiv img {
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-  max-width: 100%;
 }
 
 .articleDivSearch img {

@@ -1,7 +1,7 @@
 ---
 path: "/top_ten_dm_90s"
 date: "2020-07-18"
-image: "old_era_dm_gr.png"
+image: ./thumb.png
 title: "Top 10 Death Metal Bands From the 80s and 90s"
 author: "Monolith"
 content: "top_ten_dm_90s"

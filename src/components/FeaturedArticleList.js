@@ -14,11 +14,12 @@ export default function FeaturedArticleList(props) {
     // console.log(pageQuery.id)
 
     // JUS CONSOLE
-    console.log(props.pageQuery.images.edges.find(n => {
-        return  n.node.relativePath.includes("90s_concepts.png")
-    }).node.childImageSharp)
+    // console.log(props.pageQuery.images.edges.find(n => {
+    //     return  n.node.relativePath.includes("90s_concepts.png")
+    // }).node.childImageSharp)
+    console.log(pageQuery)
 
-    console.log(state)
+    // console.log(state)
 
     const articleList = pageQuery.allMarkdownRemark.edges.length ? (
         pageQuery.allMarkdownRemark.edges.map(article => {
@@ -27,9 +28,10 @@ export default function FeaturedArticleList(props) {
                     
                 <div className="articleDivFeatured" key={article.node.id}>
                     <Link to={"/" + article.node.frontmatter.content}>
-                        <Img fluid={pageQuery.images.edges.find(n => {
+                        {/* <Img fluid={pageQuery.images.edges.find(n => {
                                 return n.node.relativePath.includes(article.node.frontmatter.image)
-                            }).node.childImageSharp.fluid} style={{height: "100%"}}/>
+                            }).node.childImageSharp.fluid} style={{height: "100%"}}/> */}
+                            <Img fluid={article.node.frontmatter.image.childImageSharp.fluid} imgStyle={{ objectFit: 'cover' }} style={{ maxHeight: "617.35px", width: "100%" }}/>
                     </Link>
                         <div>
                             <Link to={"/" + article.node.frontmatter.content}><p className="articleTitleFeatured">{article.node.frontmatter.title}</p></Link>

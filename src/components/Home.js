@@ -26,7 +26,13 @@ export default function Home() {
                             date(formatString: "MMM Do YYYY")
                             title
                             desc
-                            image
+                            image {
+                                childImageSharp {
+                                    fluid {
+                                        ...GatsbyImageSharpFluid
+                                    }
+                                }
+                            }
                             views
                             commentsNumber
                             author

@@ -27,7 +27,13 @@ export default function DbArticleHolderSlideshow() {
                         date
                         title
                         desc
-                        image
+                        image{
+                            childImageSharp {
+                                fluid {
+                                    ...GatsbyImageSharpFluid
+                                }
+                            }
+                        }
                         views
                         commentsNumber
                         author
