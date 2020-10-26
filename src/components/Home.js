@@ -94,7 +94,7 @@ export default function Home() {
     return (
         <div>
             <SEO title="Home" />
-            <button
+            {/* <button
                 onClick={e => {
                     // To stop the page reloading
                     e.preventDefault()
@@ -113,7 +113,7 @@ export default function Home() {
                 }}
                 >
                 Tap that!
-            </button>
+            </button> */}
             <SearchList pageQuery={pageQuery}/>
             <div id="topContainer">
                 <ArticleListSlideshow pageQuery={pageQuery}/>
